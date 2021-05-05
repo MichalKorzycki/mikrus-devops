@@ -1,0 +1,15 @@
+
+#2021-05-05
+ssh-keygen -t rsa
+echo 'export PATH=$PATH:/root/scripts' >> .bashrc
+echo eval \"\$\(ssh-agent -s\)\" >> .bashrc
+echo ssh-add /root/.ssh/id_rsa >> .bashrc
+echo ip a >> .bashrc
+echo df >> .bashrc
+echo export '"PS1=\\[\\033[00\;34m\\]\\u\\[\\033[00\;36m\\]@\\[\\033[00\;35m\\]\\h:\\[\\033[01\;37m\\]\\w$\\[\\033[00m\\] "' >> .bashrc
+apt-get update
+apt-get install git
+git clone git@github.com:MichalKorzycki/mikrus-devops.git
+ln -s mikrus-devops/scripts/
+useradd michal
+adduser michal
