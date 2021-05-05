@@ -2,7 +2,7 @@
 #2021-05-05
 ssh-keygen -t rsa
 echo 'export PATH=$PATH:/root/scripts' >> .bashrc
-echo eval \"\$\(ssh-agent -s\)\" >> .bashrc
+echo 'eval \"\$\(ssh-agent -s\)\"' >> .bashrc
 echo ssh-add /root/.ssh/id_rsa >> .bashrc
 echo ip a >> .bashrc
 echo df >> .bashrc
@@ -14,3 +14,4 @@ ln -s mikrus-devops/scripts/
 adduser michal
 ln mikrus-devops/.gitconfig
 usermod -aG sudo michal
+git config --global alias.lilo "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
